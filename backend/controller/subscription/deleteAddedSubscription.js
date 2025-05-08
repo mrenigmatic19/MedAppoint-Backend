@@ -1,6 +1,6 @@
 const subscriptionModel = require('../../models/subscriptionModel');
 const userModel = require('../../models/userModel');
-const hospitalModel = require('../../models/zhospitalModel');
+const hospitalModel = require('../../models/hospitalModel');
 
 async function deleteSubscriptionController(req, res) {
     try {

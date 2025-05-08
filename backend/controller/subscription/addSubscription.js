@@ -1,5 +1,5 @@
 const subscriptionModel = require('../../models/subscriptionModel');
-const hospitalModel = require('../../models/zhospitalModel');
+const hospitalModel = require('../../models/hospitalModel');
 
 async function uploadSubscriptionController(req, res) {
     try {

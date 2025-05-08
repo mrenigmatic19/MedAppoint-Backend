@@ -1,3 +1,5 @@
+const hospitalModel = require("../../models/hospitalModel");
+
 async function hospitalDetailsController(req, res) {
     try {
         const hospital = await hospitalModel.findById(req.userId);
@@ -17,4 +19,5 @@ async function hospitalDetailsController(req, res) {
         });
     }
 }
-const hospitalModel = require("../../models/hospitalModel");
+
+module.exports = hospitalDetailsController;

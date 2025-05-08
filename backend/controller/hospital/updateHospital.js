@@ -1,6 +1,6 @@
 const userModel = require("../../models/userModel")
 
-async function updateUser(req,res){
+async function updateHospital(req,res){
     try{
         const UserId = req.userId
 
@@ -37,4 +37,4 @@ async function updateUser(req,res){
 }
 
 
-module.exports = updateUser
+module.exports = updateHospital

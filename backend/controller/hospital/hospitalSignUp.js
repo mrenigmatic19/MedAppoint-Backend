@@ -1,7 +1,7 @@
 const hospitalModel = require("../../models/hospitalModel");
 const bcrypt = require('bcryptjs');
-const Web3 = require('web3');
-const { abi, bytecode } = require("../../contracts/HospitalRegistry.json");
+//const Web3 = require('web3');
+//const { abi, bytecode } = require("../../contracts/HospitalRegistry.json");
 
 async function hospitalSignUpController(req, res) {
     try {
@@ -29,27 +29,27 @@ async function hospitalSignUpController(req, res) {
         const savedHospital = await hospitalData.save();
 
         // Initialize Web3 and admin account
-        const web3 = new Web3("https://rpc-mumbai.maticvigil.com");
-        const adminAccount = web3.eth.accounts.privateKeyToAccount(process.env.ADMIN_PRIVATE_KEY);
-        web3.eth.accounts.wallet.add(adminAccount);
+        // const web3 = new Web3("https://rpc-mumbai.maticvigil.com");
+        // const adminAccount = web3.eth.accounts.privateKeyToAccount(process.env.ADMIN_PRIVATE_KEY);
+        // web3.eth.accounts.wallet.add(adminAccount);
 
         // Deploy Smart Contract
-        const contract = new web3.eth.Contract(abi);
-        const deploy = contract.deploy({ data: bytecode });
-        const gas = await deploy.estimateGas();
+        // const contract = new web3.eth.Contract(abi);
+        // const deploy = contract.deploy({ data: bytecode });
+        // const gas = await deploy.estimateGas();
 
-        const instance = await deploy.send({
-            from: adminAccount.address,
-            gas,
-        });
+        // const instance = await deploy.send({
+        //     from: adminAccount.address,
+        //     gas,
+        // });
 
         // Call contract method to register hospital
-        await instance.methods.registerHospital(name, email).send({
-            from: adminAccount.address
-        });
+        // await instance.methods.registerHospital(name, email).send({
+        //     from: adminAccount.address
+        // });
 
         // Update hospital record with deployed smart contract address
-        savedHospital.smartContractAddress = instance.options.address;
+        savedHospital.smartContractAddress = "";
         await savedHospital.save();
 
         res.status(201).json({

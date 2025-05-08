@@ -1,3 +1,5 @@
+
+const hospitalModel = require("../../models/hospitalModel");
 async function hospitalSignInController(req, res) {
     try {
         const { email, password } = req.body;
@@ -28,4 +30,5 @@ async function hospitalSignInController(req, res) {
         });
     }
 }
-const hospitalModel = require("../../models/hospitalModel");
+
+module.exports = hospitalSignInController;

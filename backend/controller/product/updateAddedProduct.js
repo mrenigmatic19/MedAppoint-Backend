@@ -1,6 +1,6 @@
 const productModel = require('../../models/productModel');
 const userModel = require('../../models/userModel');
-const hospitalModel = require('../../models/zhospitalModel');
+const hospitalModel = require('../../models/hospitalModel');
 
 async function updateProductController(req, res) {
     try {

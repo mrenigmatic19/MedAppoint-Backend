@@ -1,4 +1,4 @@
-const productModel = require("../../models/zproductModel");
+const productModel = require("../../models/productModel");
 
 
 const deleteProduct = async(req,res)=>{
